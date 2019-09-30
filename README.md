@@ -2,7 +2,6 @@
 
 A library to provide consistent pin access between different feathers.
 
-![Pinout](./Feather Generic Pinout.svg)
 <img src="./Feather Generic Pinout.svg">
 (Modification of https://github.com/ATMakersOrg/HoldingArea/blob/master/FeatherTemplate.svg)
 
