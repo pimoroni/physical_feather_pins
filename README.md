@@ -17,7 +17,7 @@ pin16.value = True
 
 Using Physical Feather Pins:
 ```python
-import board, pimoroni_physical_feather_pins
+import pimoroni_physical_feather_pins, digitalio
 pin16 = digitalio.DigitalInOut(pimoroni_physical_feather_pins.pin16())
 # works on all feathers with a gpio there, gives a verbose error on M0 for example, note the parentheses
 pin16.switch_to_output()
