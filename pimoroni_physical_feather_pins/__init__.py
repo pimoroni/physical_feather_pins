@@ -77,7 +77,7 @@ _MACHINE_NAMES = {
     "Adafruit Feather M0 Basic with samd21g18": "m0",
     "Adafruit Feather M0 RFM69 with samd21g18": "m0",
     "Adafruit Feather M0 RFM9x with samd21g18": "m0",
-    "x86_64": "m4",  # Hack for documentation to build until we can - potentially - spoof machine name?
+    "x86_64": "m4",  # Hack for docs, until we can spoof machine name?
 }
 
 _MACHINE = _os.uname().machine
