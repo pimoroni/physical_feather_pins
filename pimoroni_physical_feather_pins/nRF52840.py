@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2020 Philip Howard, written for Pimoroni Ltd
 #
 # SPDX-License-Identifier: MIT
-from . import pin_error
+# pylint: disable=missing-docstring,no-member,invalid-name
 import microcontroller
 
 

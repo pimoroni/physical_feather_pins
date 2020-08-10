@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2020 Philip Howard, written for Pimoroni Ltd
 #
 # SPDX-License-Identifier: MIT
+# pylint: disable=missing-docstring
 
 
 class PinNotAddressableError(Exception):

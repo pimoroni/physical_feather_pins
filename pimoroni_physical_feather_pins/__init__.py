@@ -8,28 +8,20 @@
 
 A library to provide consistent pin access between different feathers.
 
-
 * Author(s): Philip Howard
 
 Implementation Notes
 --------------------
-
-**Hardware:**
-
-.. todo:: Add links to any specific hardware product page(s), or category page(s). Use unordered list & hyperlink rST
-   inline format: "* `Link Text <url>`_"
 
 **Software and Dependencies:**
 
 * Adafruit CircuitPython firmware for the supported boards:
   https://github.com/adafruit/circuitpython/releases
 
-.. todo:: Uncomment or remove the Bus Device and/or the Register library dependencies based on the library's use of either.
-
-# * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
-# * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
+# pylint: disable=missing-docstring
 
+import os as _os
 from . import pin_error
 
 # from . import m4, m0, nRF52840
@@ -77,11 +69,7 @@ def pin28():
 
 # endregion Consistent Pins
 
-import os as _os
-
-_machine = _os.uname().machine
-
-_case = {
+_MACHINE_NAMES = {
     "Adafruit Feather M4 Express with samd51j19": "m4",
     "Adafruit Feather M0 Express with samd21g18": "m0",
     "Adafruit Feather nRF52840 Express with nRF52840": "nRF52840",
@@ -91,13 +79,12 @@ _case = {
     "Adafruit Feather M0 RFM9x with samd21g18": "m0",
 }
 
+_MACHINE = _os.uname().machine
+
 # m4.init(globals())
 
-# Case statement replacement
-# [value for key, value in _case.items() if _machine in key][0].init(globals())
 try:
-    mod = __import__(_case[_machine], globals(), locals(), [None], 1)
-    mod.init(globals())
-    # _case[_machine].init(globals())
+    module = __import__(_MACHINE_NAMES[_MACHINE], globals(), locals(), [None], 1) # pylint: disable=invalid-name
+    module.init(globals())
 except KeyError:
-    raise NotImplementedError("Sorry, '{}' is not supported currently".format(_machine))
+    raise NotImplementedError("Sorry, '{}' is not supported currently".format(_MACHINE))
