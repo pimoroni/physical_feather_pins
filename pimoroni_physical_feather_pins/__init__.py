@@ -84,7 +84,9 @@ _MACHINE = _os.uname().machine
 # m4.init(globals())
 
 try:
-    module = __import__(_MACHINE_NAMES[_MACHINE], globals(), locals(), [None], 1) # pylint: disable=invalid-name
+    module = __import__(
+        _MACHINE_NAMES[_MACHINE], globals(), locals(), [None], 1
+    )  # pylint: disable=invalid-name
     module.init(globals())
 except KeyError:
     raise NotImplementedError("Sorry, '{}' is not supported currently".format(_MACHINE))

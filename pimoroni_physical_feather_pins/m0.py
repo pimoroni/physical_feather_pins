@@ -6,6 +6,7 @@
 import microcontroller
 from . import pin_error
 
+
 def pin3():
     return microcontroller.pin.PA03
 
