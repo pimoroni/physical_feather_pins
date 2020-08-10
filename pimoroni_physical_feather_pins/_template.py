@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 @Septolum, written for Pimoroni Ltd
+# SPDX-FileCopyrightText: Copyright (c) 2020 Philip Howard, written for Pimoroni Ltd
+#
+# SPDX-License-Identifier: MIT
 from . import pin_error
 import microcontroller
 
