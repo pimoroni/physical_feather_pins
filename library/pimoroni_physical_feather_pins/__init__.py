@@ -40,6 +40,7 @@ _case = {
     'Adafruit Feather M0 RFM69 with samd21g18' : "m0",
     'Adafruit Feather M0 RFM9x with samd21g18' : "m0",
 
+    'Feather STM32F405 Express with STM32F405RG' : "stm32",
 }
 
 #m4.init(globals())
